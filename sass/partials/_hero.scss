@@ -1,15 +1,123 @@
 .hero {
 	background: $blue;
 	color: $white;
+	position: relative;
+
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 45rem;
+		width: 100%;
+		height: 100%;
+		background: url(https://vieirahenrique.github.io/insure/img/bg-pattern-intro-left-mobile.svg);
+		background-repeat: no-repeat;
+	}
+
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		right: 0rem;
+		bottom: -20rem;
+		width: 100%;
+		height: 100%;
+		background: url(https://vieirahenrique.github.io/insure/img/bg-pattern-intro-right-mobile.svg);
+		background-position: bottom right;
+		background-repeat: no-repeat;
+	}
+
+	@media screen and (min-width: 768px) {
+		&::before {
+			background: url(https://vieirahenrique.github.io/insure/img/bg-pattern-intro-left-desktop.svg);
+			background-repeat: no-repeat;
+			bottom: 0;
+		}
+
+		&::after {
+			background: url(https://vieirahenrique.github.io/insure/img/bg-pattern-intro-right-desktop.svg);
+			background-repeat: no-repeat;
+			background-position: top right;
+			bottom: 0;
+		}
+	}
+
 	.container {
 		display: flex;
 		flex-direction: column;
+
+		@media screen and (min-width: 768px) {
+			flex-direction: row;
+			gap: 3.5;
+			justify-content: space-between;
+		}
+	}
+
+	.line {
+		@media screen and (min-width: 768px) {
+			width: 15rem;
+			height: 2px;
+			background: $white;
+			margin-bottom: 4rem;
+		}
 	}
 
 	&__text {
+		order: 1;
+		text-align: center;
+		padding: 11rem 0 9rem;
+		z-index: 900;
+
+		h1 {
+			font-family: 'DM Serif Display';
+			font-size: 4.8rem;
+			letter-spacing: -0.67px;
+			margin-bottom: 3rem;
+		}
+
+		p {
+			margin-bottom: 4rem;
+		}
+
+		@media screen and (min-width: 768px) {
+			max-width: 54rem;
+			order: 0;
+			text-align: left;
+
+			h1 {
+				font-size: 6.5rem;
+				line-height: 1.2;
+				font-weight: 400;
+			}
+
+			.btn {
+				&:hover {
+					background: $white;
+					color: $blue;
+				}
+			}
+		}
 	}
 
 	&__img {
 		height: 45rem;
+		background: url(https://vieirahenrique.github.io/insure/img/image-intro-mobile.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		order: 0;
+		margin-left: -5rem;
+		transform: translateX(2.5rem);
+
+		@media screen and (min-width: 768px) {
+			margin: 0;
+			transform: translateX(0);
+			height: 65rem;
+			width: 50rem;
+			background: url(https://vieirahenrique.github.io/insure/img/image-intro-desktop.jpg);
+			background-repeat: no-repeat;
+			background-size: contain;
+			transform: translateY(10rem);
+		}
 	}
 }
