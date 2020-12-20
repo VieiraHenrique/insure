@@ -1,0 +1,15 @@
+.hero {
+	background: $blue;
+	color: $white;
+	.container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__text {
+	}
+
+	&__img {
+		height: 45rem;
+	}
+}
