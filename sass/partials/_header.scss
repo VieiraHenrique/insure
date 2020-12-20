@@ -1,5 +1,8 @@
 .header {
-	/* background: $white; */
+	background: #fff;
+	position: sticky;
+	top: 0;
+	z-index: 20000;
 
 	.container {
 		display: flex;
